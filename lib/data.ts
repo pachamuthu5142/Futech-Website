@@ -63,7 +63,7 @@ export const PRODUCTS: Product[] = [
       Included:
         "FT004D display kit, RAD001 Exso Bass preamp kit, RMC cables, encoder, USB socket, FTB011 remote",
     },
-    images: ["/FT004D-USB-BT-EXSO-228x228.jpg"],
+    images: ["/FT004D-USB-BT-EXSO.jpg"],
   },
   {
     id: "ft004g-max-usb-bt",
@@ -88,7 +88,7 @@ export const PRODUCTS: Product[] = [
     specs: {
       Included: "Total Audio Control board, Big Display, FTLink Mobile App",
     },
-    images: ["/FT004G-MAX-USB+BT , Big Display.png"],
+    images: ["/banner1.png"],
     compatibility: ["FT003 Mini Decoders"],
   },
   {
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
       Included:
         "7-pin RMC connectors ×3, 2-pin RMC connector ×1, rotary encoder, FT017 remote control ×1",
     },
-    images: ["/ft006-v2-img-228x228.jpeg"],
+    images: ["/ft006-v2-img.jpeg"],
     manualUrl: "/files/pdf/FT006-V2-Manual.pdf",
     compatibility: ["FT003 mini decoder", "Rush optical board"],
   },
@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
       MCU: "JL 32-bit RISC CPU, STC8F2K64S2 8-bit",
       "PSU regulator": "LM2596-5V",
     },
-    images: ["/FT008-V4-1-228x228.jpg"],
+    images: ["/FT008-V4-1.jpg"],
     compatibility: ["FT010H-V2 HDMI Module"],
   },
   {
@@ -236,7 +236,7 @@ export const PRODUCTS: Product[] = [
       Dimensions: "76×60mm",
       Included: "Mini Decoder enclosed in BOX, HDMI cable ×1, 12V-1A power adapter ×1",
     },
-    images: ["/decoder-box.jpg"],
+    images: ["/decoderbox.jpg"],
     manualUrl: "/files/pdf/FT003/FT003 Manual V2.pdf",
     compatibility: ["Analog Audio Remote Kits", "FT004G-MAX-USB+BT"],
   },
@@ -263,7 +263,7 @@ export const PRODUCTS: Product[] = [
       Compatibility: "FT008 v2/v3/v4 kits (firmware must be v2.4 minimum)",
       Installation: "Plug-and-play upgrade module — no extra wiring needed",
     },
-    images: ["/FT010H-V2 , HDMI Plug-In Module.jpg"],
+    images: ["/IMG-20240714-WA0004.jpg"],
     compatibility: ["FT008-V4 DSP Kit (Optical/Coax)", "FT008 v2/v3/v4 kits"],
   },
 ];
