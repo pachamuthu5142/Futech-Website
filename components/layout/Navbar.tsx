@@ -38,10 +38,9 @@ export function Navbar() {
               onMouseEnter={() => setIsProductsOpen(true)}
               onMouseLeave={() => setIsProductsOpen(false)}
             >
-              <button className="flex items-center hover:text-[#C6A96B] transition-colors py-2">
+              <p className="flex items-center hover:text-[#C6A96B] text-uppercase transition-colors py-2 cursor-pointer">
                 Products <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
-
+              </p>
               {isProductsOpen && (
                 <div className="absolute left-0 mt-0 w-64 rounded-xl bg-black/80 backdrop-blur-xl border border-black/10 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="py-2">
@@ -123,25 +122,25 @@ export function Navbar() {
           <div className="px-4 pt-2 pb-6 space-y-1 text-xs uppercase tracking-widest">
             <Link
               href="/"
-              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+              className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Home
             </Link>
             <Link
               href="/products"
-              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+              className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Products
             </Link>
             <Link
               href="/downloads"
-              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+              className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Downloads
             </Link>
             <Link
               href="/support"
-              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+              className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Support
             </Link>
