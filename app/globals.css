@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-gold-500: #C6A96B;
+  --color-gold-400: #d4bc8b;
+  --color-champagne: #E9DFC7;
+  
+  --color-primary: #111111;
+  --color-secondary: #6B6B6B;
+  
+  --color-surface-card: rgba(255,255,255,0.75);
+  --color-surface-glass: rgba(255,255,255,0.55);
+}
+
+@layer utilities {
+  .glass-card {
+    backdrop-filter: blur(22px);
+    background: rgba(255,255,255,0.70);
+    border: 1px solid rgba(17,17,17,0.06);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06), 0 8px 25px rgba(198,169,107,0.12);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
