@@ -155,10 +155,10 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:col-span-1">
-              <div className="bg-white border border-black/5 rounded-[24px] p-8 sticky top-28 shadow-sm">
-                <h2 className="text-xs font-bold uppercase tracking-widest text-[#111111] mb-8">Order Summary</h2>
+              <div className="bg-white border border-black/5 rounded-[24px] p-4 sticky top-28 shadow-sm">
+                <h2 className="text-xs font-bold uppercase tracking-widest text-[#111111] mb-4">Order Summary</h2>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-4">
                   <div className="flex justify-between text-sm text-[#6B6B6B]">
                     <span>Subtotal (ex-GST)</span>
                     <span className="font-medium text-[#111111]">₹{totalExGst.toLocaleString("en-IN", { minimumFractionDigits: 2 })}</span>
@@ -196,7 +196,7 @@ export default function CartPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white text-center rounded-xl font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:shadow-[0_8px_20px_rgba(37,211,102,0.3)] mb-4"
+                  className="block w-full py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white text-center rounded-xl font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:shadow-[0_8px_20px_rgba(37,211,102,0.3)] mb-2"
                 >
                   Order via WhatsApp
                 </a>
@@ -209,7 +209,7 @@ export default function CartPage() {
                 </Link>
 
                 {/* Trust badges */}
-                <div className="mt-8 pt-6 border-t border-black/5 space-y-3">
+                <div className="mt-4 pt-4 border-t border-black/5 space-y-3">
                   {["GST Invoice Included", "Genuine Futech Products", "WhatsApp Support"].map((t) => (
                     <div key={t} className="flex items-center gap-2.5 text-[10px] text-[#6B6B6B] font-medium">
                       <ShieldCheck className="w-3.5 h-3.5 text-gold-500 flex-shrink-0" strokeWidth={2} />

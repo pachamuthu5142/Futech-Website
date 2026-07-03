@@ -76,7 +76,7 @@ export function Navbar() {
               )}
             </Link>
             <Link href="/contact" className="px-6 py-2 bg-white text-black text-xs font-bold rounded-full uppercase tracking-widest hover:bg-[#C6A96B] transition-colors">
-              Inquiry
+              Enquiry
             </Link>
           </div>
 
@@ -103,7 +103,7 @@ export function Navbar() {
             <Link href="/products" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Products</Link>
             <Link href="/downloads" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Downloads</Link>
             <Link href="/support" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Support</Link>
-            <Link href="/contact" className="block px-3 py-4 font-bold text-[#C6A96B]">Contact / Inquiry</Link>
+            <Link href="/contact" className="block px-3 py-4 font-bold text-[#C6A96B]">Contact / Enquiry</Link>
           </div>
         </div>
       )}

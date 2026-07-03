@@ -20,14 +20,14 @@ export default function DealerInquiryPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20">
-          
+
           <div className="space-y-16">
             <div>
               <h2 className="text-3xl font-serif font-bold text-[#111111] tracking-widest mb-12 flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-[#111111] text-[#FFFFFF] hover:bg-gold-500"></div>
                 Why become a dealer?
               </h2>
-              
+
               <div className="space-y-12">
                 <div className="flex group">
                   <div className="w-16 h-16 rounded-2xl bg-black/5 border border-black/5 flex items-center justify-center shrink-0 mr-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] group-hover:border-gold-500/50 transition-colors">
@@ -63,9 +63,9 @@ export default function DealerInquiryPage() {
           </div>
 
           <div className="glass-card rounded-3xl p-10 lg:p-14 border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
-            <h3 className="text-2xl font-serif font-bold text-[#111111] mb-2 uppercase tracking-widest">Submit an Inquiry</h3>
+            <h3 className="text-2xl font-serif font-bold text-[#111111] mb-2 uppercase tracking-widest">Submit an Enquiry</h3>
             <p className="text-[#6B6B6B]/80 mb-10 text-xs font-bold uppercase tracking-widest">Tell us about your business and we'll get back to you within 24 hours.</p>
-            
+
             <form className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-3">
@@ -98,7 +98,7 @@ export default function DealerInquiryPage() {
                   <input type="tel" id="phone" className="w-full bg-[#FAFAFA] border border-black/5 rounded-xl px-5 py-4 text-[#111111] font-medium focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all placeholder:text-[#111111]/20" />
                 </div>
               </div>
-              
+
               <div className="space-y-3">
                 <label htmlFor="businessType" className="text-[10px] font-bold text-[#6B6B6B] uppercase tracking-widest pl-1">Business Type</label>
                 <select id="businessType" className="w-full bg-[#FAFAFA] border border-black/5 rounded-xl px-5 py-4 text-[#111111] font-medium focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all appearance-none">
@@ -115,7 +115,7 @@ export default function DealerInquiryPage() {
               </div>
 
               <Button type="button" className="w-full mt-4" size="lg">
-                Submit Inquiry
+                Submit Enquiry
               </Button>
             </form>
           </div>

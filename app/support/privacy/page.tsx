@@ -18,52 +18,94 @@ export default function PrivacyPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="glass-card rounded-3xl border border-black/5 p-10 lg:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.06)] prose prose-invert prose-lg max-w-none prose-headings:font-serif font-bold text-[#111111] prose-headings:uppercase prose-headings:tracking-wider prose-headings:text-[#111111] prose-p:text-[#111111]/60 prose-li:text-[#111111]/60 prose-strong:text-gold-500">
+        <div className="glass-card rounded-3xl border border-black/5 p-10 lg:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.06)] prose prose-invert prose-lg max-w-none prose-headings:font-serif text-[#111111] prose-headings:uppercase prose-headings:tracking-wider prose-headings:text-[#111111] prose-p:text-[#111111]/60 prose-li:text-[#111111]/60 prose-strong:text-gold-500">
           <p className="text-[10px] text-[#6B6B6B]/80 uppercase tracking-widest font-bold mb-8">Last updated: July 2026</p>
+          <Markdown >
+            {`
+            # Privacy Policy
 
-          <h2>1. Information We Collect</h2>
-          <p>
-            We collect information you provide directly to us when you make a purchase, create an account, sign up for our newsletter, or contact us for support. This may include your name, email address, phone number, shipping and billing addresses, and payment information.
-          </p>
-          
-          <h2>2. How We Use Your Information</h2>
-          <p>
+            ## 1. Information We Collect
+
+            We collect information you provide directly to us when you make a purchase, create an account, sign up for our newsletter, or contact us for support. This may include:
+
+            - Name
+            - Email address
+            - Phone number
+            - Shipping address
+            - Billing address
+            - Payment information
+
+            ---
+
+            ## 2. How We Use Your Information
+
             We use the information we collect to:
-          </p>
-          <ul>
-            <li>Process and fulfill your orders, including sending emails to confirm your order status and shipment.</li>
-            <li>Communicate with you about products, services, offers, and promotions.</li>
-            <li>Provide customer support and respond to your inquiries.</li>
-            <li>Improve and maintain our website, products, and services.</li>
-            <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities.</li>
-          </ul>
 
-          <h2>3. FTLink Mobile App</h2>
-          <p>
-            The FTLink Mobile App requires Bluetooth permissions to connect to and configure compatible Futech modules. We do not collect, transmit, or store your location data or personal information through the FTLink app. Firmware updates requested through the app are downloaded securely from our servers.
-          </p>
+            - Process and fulfill your orders, including sending emails to confirm your order status and shipment.
+            - Communicate with you about products, services, offers, and promotions.
+            - Provide customer support and respond to your inquiries.
+            - Improve and maintain our website, products, and services.
+            - Detect, investigate, and prevent fraudulent transactions and other illegal activities.
 
-          <h2>4. Data Sharing</h2>
-          <p>
-            We do not sell your personal information. We may share your information with trusted third-party service providers who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential (e.g., shipping carriers and payment processors).
-          </p>
+            ---
 
-          <h2>5. Cookies</h2>
-          <p>
-            Our website uses cookies to enhance your browsing experience, analyze site traffic, and understand where our audience is coming from. You can choose to disable cookies through your browser settings, but doing so may affect the functionality of our website.
-          </p>
+            ## 3. FTLink Mobile App
 
-          <h2>6. Data Security</h2>
-          <p>
-            We implement a variety of security measures to maintain the safety of your personal information. Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential.
-          </p>
+            The **FTLink Mobile App** requires Bluetooth permissions to connect to and configure compatible Futech modules.
 
-          <h2>7. Contact Us</h2>
-          <p>
-            If there are any questions regarding this privacy policy, you may contact us using the information below:
-            <br />
-            Email: sales@futechaudios.com
-          </p>
+            We do **not** collect, transmit, or store your location data or personal information through the FTLink app.
+
+            Firmware updates requested through the app are downloaded securely from our servers.
+
+            ---
+
+            ## 4. Data Sharing
+
+            We do **not** sell your personal information.
+
+            We may share your information with trusted third-party service providers who assist us in:
+
+            - Operating our website
+            - Conducting our business
+            - Servicing you
+
+            These parties are required to keep your information confidential. Examples include:
+
+            - Shipping carriers
+            - Payment processors
+
+            ---
+
+            ## 5. Cookies
+
+            Our website uses cookies to:
+
+            - Enhance your browsing experience
+            - Analyze website traffic
+            - Understand where our audience is coming from
+
+            You can disable cookies through your browser settings. However, doing so may affect certain website functionality.
+
+            ---
+
+            ## 6. Data Security
+
+            We implement a variety of security measures to help protect your personal information.
+
+            Your information is:
+
+            - Stored behind secured networks
+            - Accessible only to authorized personnel with special access rights
+            - Protected under confidentiality requirements
+
+            ---
+
+            ## 7. Contact Us
+
+            If you have any questions regarding this Privacy Policy, please contact us:
+
+            **Email:** sales@futechaudios.com`}
+          </Markdown>
         </div>
       </div>
     </div>
