@@ -175,7 +175,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/dealer-enquiry"
+                  href="/dealer-inquiry"
                   className="inline-flex items-center text-[#111111] font-bold text-[10px] tracking-widest uppercase hover:text-gold-500 transition-colors mt-2"
                 >
                   Dealer / Bulk Enquiry <ArrowRight className="w-4 h-4 ml-2" />

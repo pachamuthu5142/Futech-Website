@@ -12,6 +12,9 @@ export function Navbar() {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const { totalItems } = useCart();
 
+  const handleMobileNavLinkClick = () => setIsOpen(false);
+  const handleProductsLinkClick = () => setIsProductsOpen(false);
+
   return (
     <nav className="fixed w-full z-50 top-0 transition-all duration-300 bg-black/30 backdrop-blur-md border-b border-black/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,6 +49,7 @@ export function Navbar() {
                   <div className="py-2">
                     <Link
                       href="/products"
+                      onClick={handleProductsLinkClick}
                       className="block px-4 py-3 text-xs tracking-widest text-[#ffffff]/70 hover:text-[#C6A96B] hover:bg-black/5 border-b border-black/5"
                     >
                       All Products
@@ -54,6 +58,7 @@ export function Navbar() {
                       <Link
                         key={cat.title}
                         href={`/products?category=${encodeURIComponent(cat.title)}`}
+                        onClick={handleProductsLinkClick}
                         className="block px-4 py-3 text-[10px] tracking-widest text-[#ffffff]/60 hover:text-[#C6A96B] hover:bg-black/5"
                       >
                         {cat.title}
@@ -122,29 +127,37 @@ export function Navbar() {
           <div className="px-4 pt-2 pb-6 space-y-1 text-xs uppercase tracking-widest">
             <Link
               href="/"
+              onClick={handleMobileNavLinkClick}
               className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Home
             </Link>
             <Link
               href="/products"
+              onClick={handleMobileNavLinkClick}
               className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Products
             </Link>
             <Link
               href="/downloads"
+              onClick={handleMobileNavLinkClick}
               className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Downloads
             </Link>
             <Link
               href="/support"
+              onClick={handleMobileNavLinkClick}
               className="block px-3 py-4 font-bold text-[#C6A96B] border-b border-black/5"
             >
               Support
             </Link>
-            <Link href="/contact" className="block px-3 py-4 font-bold text-[#C6A96B]">
+            <Link
+              href="/contact"
+              onClick={handleMobileNavLinkClick}
+              className="block px-3 py-4 font-bold text-[#C6A96B]"
+            >
               Contact / Enquiry
             </Link>
           </div>
