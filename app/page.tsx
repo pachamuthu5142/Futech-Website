@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/Button";
 import { ProductCard } from "@/components/product/ProductCard";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-
 export default function Home() {
   const flagshipProduct = PRODUCTS.find((p) => p.sku === "FT008-V4-HDMI") || PRODUCTS[0];
   const featuredProducts = PRODUCTS.slice(0, 4);
@@ -25,7 +23,6 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -41,7 +38,8 @@ export default function Home() {
                 <span className="italic text-gold-500">perfected.</span>
               </h1>
               <p className="text-base text-[#6B6B6B] mb-12 max-w-lg leading-relaxed font-sans">
-                Premium 5.1-channel DSP decoders and remote control kits for home theatre builders. Experience total audio clarity engineered with precision.
+                Premium 5.1-channel DSP decoders and remote control kits for home theatre builders.
+                Experience total audio clarity engineered with precision.
               </p>
               <div className="flex flex-col sm:flex-row gap-5">
                 <Button href="/products" variant="primary" size="lg">
@@ -62,7 +60,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent rounded-3xl rotate-[3deg] border border-black/5"></div>
               <div className="relative rounded-[24px] overflow-hidden bg-white border border-black/5 shadow-[0_30px_60px_rgba(0,0,0,0.08)] aspect-[4/3] w-full max-w-lg z-10 group">
                 <Image
-                  src="https://picsum.photos/seed/luxury-audio/1200/900"
+                  src="/tcl-z100-dolby-atmos-flexconnect.avif"
                   alt="Futech FT008-V4 HDMI DSP Kit"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -92,9 +90,16 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
                 className="px-4 group"
               >
-                <item.icon className="w-8 h-8 mx-auto mb-5 text-[#111111] group-hover:text-gold-500 transition-colors duration-500" strokeWidth={1.5} />
-                <h3 className="font-bold text-[#111111] text-xs uppercase tracking-widest">{item.title}</h3>
-                <p className="text-[10px] text-[#6B6B6B] mt-3 uppercase tracking-wider">{item.desc}</p>
+                <item.icon
+                  className="w-8 h-8 mx-auto mb-5 text-[#111111] group-hover:text-gold-500 transition-colors duration-500"
+                  strokeWidth={1.5}
+                />
+                <h3 className="font-bold text-[#111111] text-xs uppercase tracking-widest">
+                  {item.title}
+                </h3>
+                <p className="text-[10px] text-[#6B6B6B] mt-3 uppercase tracking-wider">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -113,39 +118,46 @@ export default function Home() {
           >
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-[10px] uppercase tracking-widest text-gold-500 font-bold">Categories</span>
+                <span className="text-[10px] uppercase tracking-widest text-gold-500 font-bold">
+                  Categories
+                </span>
               </div>
               <h2 className="text-5xl font-serif text-[#111111]">Explore Collections</h2>
             </div>
-            <Link href="/products" className="group flex items-center text-xs font-bold uppercase tracking-widest text-[#111111] hover:text-gold-500 transition-colors">
-              View all <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" />
+            <Link
+              href="/products"
+              className="group flex items-center text-xs font-bold uppercase tracking-widest text-[#111111] hover:text-gold-500 transition-colors"
+            >
+              View all{" "}
+              <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {CATEGORIES.slice(0, 3).map((category, index) => (
               <motion.div
-                key={category}
+                key={category.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.15 }}
               >
                 <Link
-                  href={`/products?category=${encodeURIComponent(category)}`}
-                  className="group relative block h-[480px] rounded-[24px] overflow-hidden bg-[#FAFAFA] border border-black/5 hover:border-gold-500/30 transition-colors duration-500 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]"
+                  href={`/products?category=${encodeURIComponent(category.title)}`}
+                  className="group relative block h-[350px] rounded-[24px] overflow-hidden bg-[#FAFAFA] border border-black/5 hover:border-gold-500/30 transition-colors duration-500 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]"
                 >
                   <Image
-                    src={`https://picsum.photos/seed/cat${index}-white/600/800`}
-                    alt={category}
+                    src={category?.image}
+                    alt={category.title}
                     fill
                     className="object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent mix-blend-normal" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-white/20 to-transparent mix-blend-normal" />
                   <div className="absolute bottom-0 left-0 p-10 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-2xl font-serif text-[#111111] mb-3">{category}</h3>
-                    <span className="text-xs text-[#6B6B6B] font-medium tracking-wide flex items-center">
-                      Discover <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:text-gold-500 transition-all transform -translate-x-4 group-hover:translate-x-0" />
+                    <h3 className="text-2xl font-serif text-[#ffffff] mb-3">{category.title}</h3>
+                    <span className="text-xs text-[#f7f7f7] font-medium tracking-wide flex items-center">
+                      Discover{" "}
+                      <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:text-gold-500 transition-all transform -translate-x-4 group-hover:translate-x-0" />
                     </span>
                   </div>
                 </Link>
@@ -166,10 +178,14 @@ export default function Home() {
             className="mb-16"
           >
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-[10px] uppercase tracking-widest text-gold-500 font-bold">Showcase</span>
+              <span className="text-[10px] uppercase tracking-widest text-gold-500 font-bold">
+                Showcase
+              </span>
             </div>
             <h2 className="text-5xl font-serif text-[#111111]">Featured Pieces</h2>
-            <p className="text-[#6B6B6B] mt-6 text-base max-w-xl font-sans">Our flagship decoders and remote kits, crafted for uncompromising quality.</p>
+            <p className="text-[#6B6B6B] mt-6 text-base max-w-xl font-sans">
+              Our flagship decoders and remote kits, crafted for uncompromising quality.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -203,12 +219,22 @@ export default function Home() {
                 <span className="italic text-gold-500">In your pocket.</span>
               </h2>
               <p className="text-base text-[#6B6B6B] mb-12 max-w-lg leading-relaxed font-sans">
-                Connect seamlessly to your FT004G-MAX and compatible kits via the FTLink Mobile App. Configure source names, update firmware, and manage playback intuitively.
+                Connect seamlessly to your FT004G-MAX and compatible kits via the FTLink Mobile App.
+                Configure source names, update firmware, and manage playback intuitively.
               </p>
               <ul className="space-y-6 mb-12 text-[#111111] text-sm font-medium tracking-wide">
-                <li className="flex items-center"><ShieldCheck className="w-5 h-5 mr-4 text-gold-500" strokeWidth={1.5} /> Real-time status sync</li>
-                <li className="flex items-center"><ShieldCheck className="w-5 h-5 mr-4 text-gold-500" strokeWidth={1.5} /> Over-the-air firmware updates</li>
-                <li className="flex items-center"><ShieldCheck className="w-5 h-5 mr-4 text-gold-500" strokeWidth={1.5} /> Advanced DSP configuration</li>
+                <li className="flex items-center">
+                  <ShieldCheck className="w-5 h-5 mr-4 text-gold-500" strokeWidth={1.5} /> Real-time
+                  status sync
+                </li>
+                <li className="flex items-center">
+                  <ShieldCheck className="w-5 h-5 mr-4 text-gold-500" strokeWidth={1.5} />{" "}
+                  Over-the-air firmware updates
+                </li>
+                <li className="flex items-center">
+                  <ShieldCheck className="w-5 h-5 mr-4 text-gold-500" strokeWidth={1.5} /> Advanced
+                  DSP configuration
+                </li>
               </ul>
               <Button href="/products/ft004g-max-usb-bt" variant="primary" size="lg">
                 Discover FT004G-MAX
@@ -224,10 +250,10 @@ export default function Home() {
             >
               <div className="aspect-[4/5] relative rounded-[32px] overflow-hidden border border-black/5 shadow-[0_30px_60px_rgba(0,0,0,0.08)] bg-[#FAFAFA] group">
                 <Image
-                  src="https://picsum.photos/seed/ftlink-app-white/800/1000"
+                  src="/banner1.png"
                   alt="FTLink Mobile App Interface"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                  className="object-fit group-hover:scale-105 transition-transform duration-1000"
                 />
               </div>
             </motion.div>
@@ -253,14 +279,16 @@ export default function Home() {
             className="text-center mb-20"
           >
             <div className="inline-flex items-center gap-3 mb-6">
-              <span className="text-[10px] uppercase tracking-widest text-gold-500 font-bold">Testimonials</span>
+              <span className="text-[10px] uppercase tracking-widest text-gold-500 font-bold">
+                Testimonials
+              </span>
             </div>
             <h2 className="text-5xl font-serif text-[#111111] mb-6">
-              Trusted by audio{" "}
-              <span className="italic text-gold-500">enthusiasts</span>
+              Trusted by audio <span className="italic text-gold-500">enthusiasts</span>
             </h2>
             <p className="text-base text-[#6B6B6B] max-w-xl mx-auto leading-relaxed font-sans">
-              Thousands of home theatre builders across India have chosen Futech for their most demanding audio setups.
+              Thousands of home theatre builders across India have chosen Futech for their most
+              demanding audio setups.
             </p>
           </motion.div>
 
@@ -337,12 +365,19 @@ export default function Home() {
                 className="group relative bg-[#FAFAFA] border border-black/5 rounded-[24px] p-8 hover:border-gold-500/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500"
               >
                 {/* Quote mark */}
-                <div className="absolute top-6 right-8 text-6xl font-serif text-black/5 group-hover:text-gold-500/10 transition-colors duration-500 leading-none select-none">&ldquo;</div>
+                <div className="absolute top-6 right-8 text-6xl font-serif text-black/5 group-hover:text-gold-500/10 transition-colors duration-500 leading-none select-none">
+                  &ldquo;
+                </div>
 
                 {/* Stars */}
                 <div className="flex gap-1 mb-6">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-gold-500" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      key={i}
+                      className="w-4 h-4 text-gold-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
@@ -366,7 +401,9 @@ export default function Home() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[#111111] text-sm font-bold truncate">{t.name}</p>
-                    <p className="text-[#6B6B6B] text-[10px] uppercase tracking-wider truncate">{t.location}</p>
+                    <p className="text-[#6B6B6B] text-[10px] uppercase tracking-wider truncate">
+                      {t.location}
+                    </p>
                   </div>
                   <div className="ml-auto">
                     <span className="text-[9px] text-gold-500 font-bold uppercase tracking-widest bg-gold-500/5 rounded-full px-3 py-1 whitespace-nowrap">
@@ -394,7 +431,9 @@ export default function Home() {
             ].map((item, i) => (
               <div key={i}>
                 <p className="text-4xl font-serif text-[#111111] mb-2">{item.stat}</p>
-                <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] font-medium">{item.label}</p>
+                <p className="text-[10px] uppercase tracking-widest text-[#6B6B6B] font-medium">
+                  {item.label}
+                </p>
               </div>
             ))}
           </motion.div>
@@ -412,7 +451,8 @@ export default function Home() {
         >
           <h2 className="text-5xl font-serif text-[#111111] mb-8">Not sure which kit you need?</h2>
           <p className="text-base text-[#6B6B6B] mb-12 leading-relaxed font-sans">
-            Whether you're retrofitting an old amplifier or building a custom home theatre, our selection tool will guide you to the exact Futech modules required.
+            Whether you're retrofitting an old amplifier or building a custom home theatre, our
+            selection tool will guide you to the exact Futech modules required.
           </p>
           <Button href="/search" variant="outline" size="lg">
             Start Selection Guide

@@ -5,6 +5,7 @@ import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { CATEGORIES } from "@/lib/data";
 import { useCart } from "@/lib/cartContext";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,17 +18,20 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-              <div className="w-8 h-8 bg-white flex items-center justify-center rounded-sm">
-                <div className="w-4 h-4 bg-black rounded-full"></div>
-              </div>
-              <span className="text-xl font-bold tracking-tighter uppercase italic text-[#111111]">
-                Futech <span className="font-light text-[#111111]/60 uppercase">Audios</span>
-              </span>
+              <Image
+                src="/Store_logo.png"
+                alt="Futech Audios"
+                width={220}
+                height={40}
+                className="object-contain filter invert brightness-700"
+              />
             </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.2em] font-semibold text-[#111111]/70">
-            <Link href="/" className="hover:text-gold-500 transition-colors text-[#111111]">Home</Link>
+            <Link href="/" className="hover:text-gold-500 transition-colors text-[#111111]">
+              Home
+            </Link>
 
             <div
               className="relative"
@@ -41,16 +45,19 @@ export function Navbar() {
               {isProductsOpen && (
                 <div className="absolute left-0 mt-0 w-64 rounded-xl bg-black/80 backdrop-blur-xl border border-black/10 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="py-2">
-                    <Link href="/products" className="block px-4 py-3 text-xs tracking-widest text-[#ffffff]/70 hover:text-[#C6A96B] hover:bg-black/5 border-b border-black/5">
+                    <Link
+                      href="/products"
+                      className="block px-4 py-3 text-xs tracking-widest text-[#ffffff]/70 hover:text-[#C6A96B] hover:bg-black/5 border-b border-black/5"
+                    >
                       All Products
                     </Link>
-                    {CATEGORIES.map(cat => (
+                    {CATEGORIES.map((cat) => (
                       <Link
-                        key={cat}
-                        href={`/products?category=${encodeURIComponent(cat)}`}
+                        key={cat.title}
+                        href={`/products?category=${encodeURIComponent(cat.title)}`}
                         className="block px-4 py-3 text-[10px] tracking-widest text-[#ffffff]/60 hover:text-[#C6A96B] hover:bg-black/5"
                       >
-                        {cat}
+                        {cat.title}
                       </Link>
                     ))}
                   </div>
@@ -58,16 +65,28 @@ export function Navbar() {
               )}
             </div>
 
-            <Link href="/downloads" className="hover:text-[#C6A96B] transition-colors">Downloads</Link>
-            <Link href="/support" className="hover:text-[#C6A96B] transition-colors">Support</Link>
-            <Link href="/about" className="hover:text-[#C6A96B] transition-colors">About</Link>
+            <Link href="/downloads" className="hover:text-[#C6A96B] transition-colors">
+              Downloads
+            </Link>
+            <Link href="/support" className="hover:text-[#C6A96B] transition-colors">
+              Support
+            </Link>
+            <Link href="/about" className="hover:text-[#C6A96B] transition-colors">
+              About
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-6 text-[#111111]">
-            <Link href="/search" className="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+            <Link
+              href="/search"
+              className="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
+            >
               <Search className="w-4 h-4" />
             </Link>
-            <Link href="/cart" className="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative">
+            <Link
+              href="/cart"
+              className="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative"
+            >
               <ShoppingCart className="w-4 h-4" />
               {totalItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#C6A96B] text-black text-[9px] font-bold min-w-[18px] h-[18px] px-1 rounded-full flex items-center justify-center animate-bounce-once">
@@ -75,7 +94,10 @@ export function Navbar() {
                 </span>
               )}
             </Link>
-            <Link href="/contact" className="px-6 py-2 bg-white text-black text-xs font-bold rounded-full uppercase tracking-widest hover:bg-[#C6A96B] transition-colors">
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-white text-black text-xs font-bold rounded-full uppercase tracking-widest hover:bg-[#C6A96B] transition-colors"
+            >
               Enquiry
             </Link>
           </div>
@@ -99,11 +121,33 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-xl border-b border-black/10 overflow-hidden animate-in slide-in-from-top-2 duration-200">
           <div className="px-4 pt-2 pb-6 space-y-1 text-xs uppercase tracking-widest">
-            <Link href="/" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Home</Link>
-            <Link href="/products" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Products</Link>
-            <Link href="/downloads" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Downloads</Link>
-            <Link href="/support" className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5">Support</Link>
-            <Link href="/contact" className="block px-3 py-4 font-bold text-[#C6A96B]">Contact / Enquiry</Link>
+            <Link
+              href="/"
+              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+            >
+              Home
+            </Link>
+            <Link
+              href="/products"
+              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+            >
+              Products
+            </Link>
+            <Link
+              href="/downloads"
+              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+            >
+              Downloads
+            </Link>
+            <Link
+              href="/support"
+              className="block px-3 py-4 font-bold text-[#111111] border-b border-black/5"
+            >
+              Support
+            </Link>
+            <Link href="/contact" className="block px-3 py-4 font-bold text-[#C6A96B]">
+              Contact / Enquiry
+            </Link>
           </div>
         </div>
       )}
